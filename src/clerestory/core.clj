@@ -5,11 +5,13 @@
                                         TokenMakerFactory)	
            (org.fife.ui.rtextarea RTextScrollPane)))
 
+(defonce appstate (ref {}))
+
 (defn make-text-area []
   (let [area (RSyntaxTextArea.)]
     (doto area
-      (.setAnimateBracketMatching false)
-      (.setBracketMatchingEnabled false)
+      (.setAnimateBracketMatching true)
+      (.setBracketMatchingEnabled true)
       (.setAutoIndentEnabled false)
       (.setAntiAliasingEnabled true)
       (.setLineWrap false)
